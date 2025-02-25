@@ -14,7 +14,8 @@ Splash Screen
 ![background](https://github.com/user-attachments/assets/b027f136-e9e1-4e65-a1c0-368e9272d431)
 
 Main Screen
-![main_des](https://github.com/user-attachments/assets/4d48bc20-9f2f-4710-b56e-77e1e92f9afa)
+![main](https://github.com/user-attachments/assets/a113c530-3a6a-41cb-a41a-71d29dfd9321)
+
 
 # Descriptions 
 
