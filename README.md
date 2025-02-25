@@ -1,6 +1,30 @@
 # System-Monitor-by-ESP8266-and-Libre-Hardware-Monitor
 System Monitor by ESP8266 and Libre Hardware Monitor
 
+# Steps to Do
+1. First download and run Libre Hardware Monitor (LHM) [here](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor).
+2. Run LHM and do not change anything, only activate Remote Web Server.
+3. Open and Run "shorten_json.py". (This app is created by Github Copilot to shorten the json output of LHM web server. Because its so huge and ESP8266's memory cant read it all.)
+4. Modify your SSID & Password & local IP in ino file.
+5. Verify and upload the code (PY_ESP8266_LHM.ino) to your ESP8266.
+
+# Screenshots of the app
+
+Splash Screen
+![background](https://github.com/user-attachments/assets/b027f136-e9e1-4e65-a1c0-368e9272d431)
+
+Main Screen
+![main_des](https://github.com/user-attachments/assets/4d48bc20-9f2f-4710-b56e-77e1e92f9afa)
+
+# Descriptions 
+
+Splash Screen
+![background_des](https://github.com/user-attachments/assets/90b56dc1-d75e-41c5-931e-870bc0f8b804)
+
+Main Screen
+![main_des](https://github.com/user-attachments/assets/273fc867-1582-4a75-b6e6-381d65e6a6fa)
+
+
 # ESP8266 WiFi Connection and Data Display on TFT Screen
 
 This project connects an ESP8266 to a WiFi network, fetches JSON data from a server, and displays the data on a TFT screen. Additionally, it updates and displays the current date and time using an NTP client.
