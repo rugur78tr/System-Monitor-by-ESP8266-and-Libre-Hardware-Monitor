@@ -8,6 +8,9 @@ System Monitor by ESP8266 and Libre Hardware Monitor
 4. Modify your SSID & Password & local IP in ino file.
 5. Verify and upload the code (PY_ESP8266_LHM.ino) to your ESP8266.
 
+## Project Demo
+[![Watch the video](https://img.youtube.com/vi/OWI3RD5Wnaw/maxresdefault.jpg)](https://www.youtube.com/watch?v=OWI3RD5Wnaw)
+
 # Screenshots of the app
 
 Splash Screen
