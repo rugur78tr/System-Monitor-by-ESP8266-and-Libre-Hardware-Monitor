@@ -1,74 +1,56 @@
 # System-Monitor-by-ESP8266-and-Libre-Hardware-Monitor
 System Monitor by ESP8266 and Libre Hardware Monitor
 
-from flask import Flask, jsonify
-import requests
+# ESP8266 WiFi Connection and Data Display on TFT Screen
 
-app = Flask(__name__)
+This project connects an ESP8266 to a WiFi network, fetches JSON data from a server, and displays the data on a TFT screen. Additionally, it updates and displays the current date and time using an NTP client.
 
-# Libre Hardware Monitor server URL
-LIBRE_HW_MONITOR_URL = "http://192.168.0.19:8085/data.json"
+## Features
 
-def fetch_and_shorten_data():
-    try:
-        # Fetch the JSON data from Libre Hardware Monitor
-        response = requests.get(LIBRE_HW_MONITOR_URL)
-        data = response.json()
+1. **Include Libraries**:
+    - Includes necessary libraries for WiFi, HTTP client, JSON parsing, TFT display, NTP client, and UDP communication.
 
-        # Initialize shortened data structure
-        shortened_data = {
-            "CPU": {
-                "Name": None,
-                "Temperature": None,
-                "Load": None
-            },
-            "GPU": {
-                "Name": None,
-                "Temperature": None,
-                "Load": None
-            }
-        }
+2. **Define Constants**:
+    - Defines constants for WiFi credentials, server URL, and colors.
 
-        # Extract CPU and GPU data
-        for hardware in data.get("Children", []):
-            for device in hardware.get("Children", []):
-                # Extract CPU data
-                if "Intel Core" in device.get("Text", ""):
-                    shortened_data["CPU"]["Name"] = device.get("Text")
-                    for sensor in device.get("Children", []):
-                        if sensor.get("Text") == "Temperatures":
-                            for temp_sensor in sensor.get("Children", []):
-                                if "Core" in temp_sensor.get("Text", ""):
-                                    shortened_data["CPU"]["Temperature"] = temp_sensor.get("Value")
-                        elif sensor.get("Text") == "Load":
-                            for load_sensor in sensor.get("Children", []):
-                                if "CPU Total" in load_sensor.get("Text", ""):
-                                    shortened_data["CPU"]["Load"] = load_sensor.get("Value")
+3. **Initialize NTP Client**:
+    - Initializes an NTP client to fetch the current date and time.
 
-                # Extract GPU data
-                if "NVIDIA" in device.get("Text", ""):
-                    shortened_data["GPU"]["Name"] = device.get("Text")
-                    for sensor in device.get("Children", []):
-                        if sensor.get("Text") == "Temperatures":
-                            for temp_sensor in sensor.get("Children", []):
-                                if "GPU Core" in temp_sensor.get("Text", ""):
-                                    shortened_data["GPU"]["Temperature"] = temp_sensor.get("Value")
-                        elif sensor.get("Text") == "Load":
-                            for load_sensor in sensor.get("Children", []):
-                                if "GPU Core" in load_sensor.get("Text", ""):
-                                    shortened_data["GPU"]["Load"] = load_sensor.get("Value")
+4. **Initialize TFT Display and Sprites**:
+    - Creates objects for the TFT display and various sprites used to display information.
 
-        return shortened_data
-    except Exception as e:
-        return {"error": str(e)}
+5. **Setup Function**:
+    - Initializes serial communication.
+    - Connects to the specified WiFi network.
+    - Initializes the TFT display and sets up the screen with a background image.
+    - Creates and configures the sprites for the clock, CPU temperature, CPU load, GPU temperature, and GPU load.
+    - Waits for a successful WiFi connection.
+    - Initializes the NTP client and fetches the current time.
 
-@app.route('/data.json')
-def serve_shortened_data():
-    shortened_data = fetch_and_shorten_data()
-    return jsonify(shortened_data)
+6. **Loop Function**:
+    - Checks for a WiFi connection.
+    - Sends an HTTP GET request to fetch JSON data from the server.
+    - Parses the received JSON data to extract CPU and GPU information.
+    - Updates and displays the current date and time if it has changed.
+    - Displays the CPU and GPU names and their respective temperatures and loads on the TFT screen.
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+7. **Date and Time Update**:
+    - Fetches the current date and time from the NTP server.
+    - Updates the time and date displayed on the screen if they have changed.
 
+8. **Display CPU and GPU Information**:
+    - Displays the CPU and GPU names based on the parsed JSON data.
+    - Extracts and displays the CPU and GPU temperature and load values on the screen.
 
+## How to Use
 
+1. Clone this repository to your local machine.
+2. Open the project in the Arduino IDE.
+3. Update the WiFi credentials (`ssid` and `password`) and `serverUrl` with your own information.
+4. Upload the code to your ESP8266 board.
+5. Open the Serial Monitor to view the status and fetched data.
+6. The TFT screen will display the current date, time, and CPU/GPU information from the server.
+
+## License
+
+This project is licensed under the MIT License.
