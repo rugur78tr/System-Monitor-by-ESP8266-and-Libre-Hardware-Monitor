@@ -54,3 +54,11 @@ This project connects an ESP8266 to a WiFi network, fetches JSON data from a ser
 ## License
 
 This project is licensed under the MIT License.
+
+## Important Notes for Users (shorten_json.py)
+
+- **Security**: The application only reads data from the specified Libre Hardware Monitor URL and does not perform any actions that could harm your system.
+- **Transparency**: The code is open-source, and you can review it yourself to ensure that it is safe to use.
+- **Usage**: Feel free to download and use this application without hesitation. It is designed to be a simple and safe tool for monitoring hardware data.
+- **Support**: If you have any questions or concerns, please feel free to open an issue or contact the repository maintainer.
+
