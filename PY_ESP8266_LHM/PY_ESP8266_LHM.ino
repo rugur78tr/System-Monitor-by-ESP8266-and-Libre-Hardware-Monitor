@@ -5,9 +5,9 @@
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 
-const char* ssid = "TURKSAT-KABLONET-AD67-2.4G";
-const char* password = "079501ruE***";
-const char* serverUrl = "http://192.168.0.19:5000/data.json";
+const char* ssid = "place_your_SSID_here";
+const char* password = "place_your_SSID_password";
+const char* serverUrl = "http://place_your_local_IP:5000/data.json"; // sample >>> http://192.168.x.xx:5000/data.json
 
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org", 10800, 60000); // UTC+3 (Istanbul)
