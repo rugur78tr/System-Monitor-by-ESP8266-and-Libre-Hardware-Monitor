@@ -11,18 +11,22 @@ System Monitor by ESP8266 and Libre Hardware Monitor
 # Screenshots of the app
 
 Splash Screen
+
 ![background](https://github.com/user-attachments/assets/b027f136-e9e1-4e65-a1c0-368e9272d431)
 
 Main Screen
+
 ![main](https://github.com/user-attachments/assets/a113c530-3a6a-41cb-a41a-71d29dfd9321)
 
 
 # Descriptions 
 
 Splash Screen
+
 ![background_des](https://github.com/user-attachments/assets/90b56dc1-d75e-41c5-931e-870bc0f8b804)
 
 Main Screen
+
 ![main_des](https://github.com/user-attachments/assets/273fc867-1582-4a75-b6e6-381d65e6a6fa)
 
 
