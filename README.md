@@ -9,7 +9,7 @@ System Monitor by ESP8266 and Libre Hardware Monitor
 5. Verify and upload the code (PY_ESP8266_LHM.ino) to your ESP8266.
 
 ## Project Demo
-[![Watch the video](https://img.youtube.com/vi/OWI3RD5Wnaw/maxresdefault.jpg)](https://www.youtube.com/watch?v=OWI3RD5Wnaw)
+[![Watch the video](https://img.youtube.com/vi/6JJoFwLGpr8/maxresdefault.jpg)](https://www.youtube.com/watch?v=6JJoFwLGpr8)
 
 # Screenshots of the app
 
